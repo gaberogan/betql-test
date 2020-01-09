@@ -1,0 +1,1 @@
+export const wait = async ms => new Promise(rs => setTimeout(rs, ms))
