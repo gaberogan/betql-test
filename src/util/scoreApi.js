@@ -41,6 +41,22 @@ const mockScores = [{
     time: moment().add(4, "days").valueOf(),
     isFinal: false,
     betInfo: 'PHI -6.5 O/U 43.5',
+}, {
+    teams: [
+        { name: 'Rockies', score: 0 },
+        { name: 'Royals', score: 0 },
+    ],
+    time: moment().add(4, "days").valueOf(),
+    isFinal: false,
+    betInfo: 'PHI -6.5 O/U 43.5',
+}, {
+    teams: [
+        { name: 'Rockies', score: 0 },
+        { name: 'Royals', score: 0 },
+    ],
+    time: moment().add(4, "days").valueOf(),
+    isFinal: false,
+    betInfo: 'PHI -6.5 O/U 43.5',
 }]
 
 export const mockScoresRequest = async () => {
