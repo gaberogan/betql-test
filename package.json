@@ -2,9 +2,10 @@
   "name": "betql-test",
   "version": "0.1.0",
   "description": "",
+  "main": "docs/index.html",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode production"
   },
   "license": "MIT",
   "dependencies": {
@@ -21,26 +22,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "babel-loader": "^8.0.6",
     "babel-preset-nano-react-app": "^0.1.0",
-    "parcel-bundler": "^1.12.3"
-  },
-  "babel": {
-    "presets": [
-      "nano-react-app"
-    ],
-    "plugins": [
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          "loose": true
-        }
-      ],
-      [
-        "@babel/plugin-transform-react-jsx",
-        {
-          "pragmaFrag": "React.Fragment"
-        }
-      ]
-    ]
+    "css-loader": "^3.4.1",
+    "html-webpack-plugin": "^3.2.0",
+    "parcel-bundler": "^1.12.3",
+    "style-loader": "^1.1.2",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
