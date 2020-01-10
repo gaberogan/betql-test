@@ -12,7 +12,7 @@ export const OuterContainer = styled.div`
 
 // CSS for the list of matches/scores
 
-export const ScoreBox = styled.div`
+export const ScoreList = styled.div`
     min-width: 330px;
     border: 1px solid #eee;
     border-left: 0px;
@@ -32,7 +32,7 @@ export const ScoreBox = styled.div`
 
 // A box for each item
 
-export const ScoreBoxItem = styled.div`
+export const ScoreListItem = styled.div`
     background: #fff;
     white-space: nowrap;
     overflow: hidden;

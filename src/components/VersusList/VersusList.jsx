@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import useAsyncEffect from 'use-async-effect'
 import _ from 'lodash'
 import moment from 'moment'
-import { OuterContainer, ScoreBox, ScoreBoxItem, LiveIcon, HorizontalScroll } from './StyledComponents'
+import { OuterContainer, ScoreList, ScoreListItem, LiveIcon, HorizontalScroll } from './StyledComponents'
 import { scoreApi } from '../../util'
 
 // Top-level logic to load + display score data
@@ -32,46 +32,46 @@ const VersusListItem = ({ item }) => {
     const t0ahead = !item.loading && item.teams[0].score > item.teams[1].score
 
     if (item.loading) return (
-        <ScoreBox style={{ color: '#eee', userSelect: 'none' }}>
-            <ScoreBoxItem>██████</ScoreBoxItem>
-            <ScoreBoxItem></ScoreBoxItem>
-            <ScoreBoxItem>███████</ScoreBoxItem>
-            <ScoreBoxItem>█████</ScoreBoxItem>
-            <ScoreBoxItem></ScoreBoxItem>
-            <ScoreBoxItem>████████████</ScoreBoxItem>
-        </ScoreBox>
+        <ScoreList style={{ color: '#eee', userSelect: 'none' }}>
+            <ScoreListItem>██████</ScoreListItem>
+            <ScoreListItem></ScoreListItem>
+            <ScoreListItem>███████</ScoreListItem>
+            <ScoreListItem>█████</ScoreListItem>
+            <ScoreListItem></ScoreListItem>
+            <ScoreListItem>████████████</ScoreListItem>
+        </ScoreList>
     )
 
     if (item.isFinal) return (
-        <ScoreBox>
-            <ScoreBoxItem style={{ fontWeight: t0ahead ? 'bold' : '' }}>{item.teams[0].name}</ScoreBoxItem>
-            <ScoreBoxItem style={{ fontWeight: t0ahead ? 'bold' : '' }}>{item.teams[0].score}</ScoreBoxItem>
-            <ScoreBoxItem style={{ fontWeight: 'bold' }}>FINAL</ScoreBoxItem>
-            <ScoreBoxItem style={{ fontWeight: t0ahead ? '' : 'bold' }}>{item.teams[1].name}</ScoreBoxItem>
-            <ScoreBoxItem style={{ fontWeight: t0ahead ? '' : 'bold' }}>{item.teams[1].score}</ScoreBoxItem>
-            <ScoreBoxItem style={{ fontWeight: 'bold' }}>{item.betInfo}</ScoreBoxItem>
-        </ScoreBox>
+        <ScoreList>
+            <ScoreListItem style={{ fontWeight: t0ahead ? 'bold' : '' }}>{item.teams[0].name}</ScoreListItem>
+            <ScoreListItem style={{ fontWeight: t0ahead ? 'bold' : '' }}>{item.teams[0].score}</ScoreListItem>
+            <ScoreListItem style={{ fontWeight: 'bold' }}>FINAL</ScoreListItem>
+            <ScoreListItem style={{ fontWeight: t0ahead ? '' : 'bold' }}>{item.teams[1].name}</ScoreListItem>
+            <ScoreListItem style={{ fontWeight: t0ahead ? '' : 'bold' }}>{item.teams[1].score}</ScoreListItem>
+            <ScoreListItem style={{ fontWeight: 'bold' }}>{item.betInfo}</ScoreListItem>
+        </ScoreList>
     )
 
     if (hasStarted) return (
-        <ScoreBox>
-            <ScoreBoxItem>{item.teams[0].name}</ScoreBoxItem>
-            <ScoreBoxItem>{item.teams[0].score}</ScoreBoxItem>
-            <ScoreBoxItem>STARTED</ScoreBoxItem>
-            <ScoreBoxItem>{item.teams[1].name}</ScoreBoxItem>
-            <ScoreBoxItem>{item.teams[1].score}</ScoreBoxItem>
-            <ScoreBoxItem>{item.betInfo}</ScoreBoxItem>
-        </ScoreBox>
+        <ScoreList>
+            <ScoreListItem>{item.teams[0].name}</ScoreListItem>
+            <ScoreListItem>{item.teams[0].score}</ScoreListItem>
+            <ScoreListItem>STARTED</ScoreListItem>
+            <ScoreListItem>{item.teams[1].name}</ScoreListItem>
+            <ScoreListItem>{item.teams[1].score}</ScoreListItem>
+            <ScoreListItem>{item.betInfo}</ScoreListItem>
+        </ScoreList>
     )
 
     if (!hasStarted) return (
-        <ScoreBox>
-            <ScoreBoxItem>{item.teams[0].name}</ScoreBoxItem>
-            <ScoreBoxItem></ScoreBoxItem>
-            <ScoreBoxItem>{moment.utc(item.time).calendar()}</ScoreBoxItem>
-            <ScoreBoxItem>{item.teams[1].name}</ScoreBoxItem>
-            <ScoreBoxItem></ScoreBoxItem>
-            <ScoreBoxItem>{item.betInfo}</ScoreBoxItem>
-        </ScoreBox>
+        <ScoreList>
+            <ScoreListItem>{item.teams[0].name}</ScoreListItem>
+            <ScoreListItem></ScoreListItem>
+            <ScoreListItem>{moment.utc(item.time).calendar()}</ScoreListItem>
+            <ScoreListItem>{item.teams[1].name}</ScoreListItem>
+            <ScoreListItem></ScoreListItem>
+            <ScoreListItem>{item.betInfo}</ScoreListItem>
+        </ScoreList>
     )
 }
